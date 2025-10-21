@@ -82,11 +82,19 @@ public class RemoveNightvisionClient implements ClientModInitializer {
                                 );
 
                                 if (!minehutManager.isOnMinehutLobby()) {
-                                    player.sendMessage(
-                                            Text.literal("You aren't currently in the lobby, so night vision has not been removed.")
-                                                    .styled((styler) -> styler.withColor(Formatting.GRAY).withItalic(true)),
-                                            false
-                                    );
+                                    if(config.isDisableNightvision()) {
+                                        player.sendMessage(
+                                                Text.literal("You aren't currently in the lobby, so night vision has not been removed.")
+                                                        .styled((styler) -> styler.withColor(Formatting.GRAY).withItalic(true)),
+                                                false
+                                        );
+                                    } else {
+                                        player.sendMessage(
+                                                Text.literal("You aren't currently in the lobby, so night vision has not been added.")
+                                                        .styled((styler) -> styler.withColor(Formatting.GRAY).withItalic(true)),
+                                                false
+                                        );
+                                    }
                                 }
 
                                 return 1;

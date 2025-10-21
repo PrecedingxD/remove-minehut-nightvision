@@ -1,0 +1,11 @@
+{
+  "required": true,
+  "package": "me.preceding.nightvision.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "me.preceding.nightvision.mixin.ClientPlayNetworkHandlerMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
